@@ -25,10 +25,10 @@ perform = async (page) => {
 			let result = parsePage(response.data);	
 			//console.log('result',result);
 			result.books.forEach(book => {
-				console.log('book.title',book.title);  
+				//console.log('book.title',book.title);  
 				book.category = v.category; 
 				book.lang = v.lang;
-				//storage.storeBook(book);
+				storage.storeBook(book);
 			});
 
 			//move to next page of results
@@ -62,7 +62,7 @@ getList = (lang, category, price_from, price_to, page) => {
             }
         })
     } catch (error) {
-        console.log('###Error: getTranslation');
+        console.log('###Error: getList');
         console.error(error);
     }
 }
@@ -84,7 +84,7 @@ parsePage = (html) => {
 	}
 
 	let tables = mainNode.getElementsByTagName('table');
-	console.log('tables.length', tables.length);
+	//console.log('tables.length', tables.length);
 
 	tables.forEach(element => {
 		let plb = element.getElementsByClassName('product_list_box')[0];
@@ -104,7 +104,7 @@ parsePage = (html) => {
 			price: price,
 			p_id: p_id
 		}
-		console.log(book);
+//console.log(book);
 		books.push(book); 
 	});
 	
@@ -121,7 +121,7 @@ parsePage = (html) => {
 		}
 	});	
 //console.log('navs.lenght',navs.length);		
-console.log('nas.lenght',nas.length);	
+//console.log('nas.lenght',nas.length);	
 //console.log("books", books);
     return {
 		books: books, 
