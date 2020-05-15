@@ -1,5 +1,5 @@
 1	Inne
-2	Literatura piękna
+-2	Literatura piękna
 3	Hobby
 4	Literatura faktu
 5	Kalendarze
@@ -37,7 +37,7 @@
 40	Dramat
 41	Dziecięca
 42	Turystyka
-43	Atlasy i mapy
+-43	Atlasy i mapy
 45	Przewodniki
 46	Dom
 47	Ogród
@@ -47,8 +47,8 @@
 51	Architektura
 53	Muzyka
 54	Poradniki
-55	Informatyka
-56	Programowanie
+-55	Informatyka
+-56	Programowanie
 57	Bazy danych
 58	Bezpieczeństwo
 59	Sieci komputerowe
