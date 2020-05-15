@@ -3,17 +3,22 @@ var DomParser = require('dom-parser');
 const storage = require("./storage.js");
 const sT = require("../config/global.js");
 
-exports.run = async ()=> {
+exports.run = async (force=false)=> {
 	sT.currentScan = 0;
-	perform(1); //page
+	perform(force, 1); //page
 }
 
-perform = async (page) => {
-	console.log('perform SCAN', sT.currentScan);
+perform = async (force, page) => {
+	console.log('perform SCAN', sT.currentScan, force);
 	if (sT.currentScan >= sT.scanTables.length) {
 		console.log('END OF PROCESSING');
 		return;		
 	}
+
+	if (force===false) {
+		sT.scanTables[sT.currentScan].lang = 'XXX';
+	}
+
 	var v = sT.scanTables[sT.currentScan];
 	console.log('scan params', JSON.stringify(v));
 
@@ -38,12 +43,12 @@ perform = async (page) => {
 
 			//move to next page of results
 			if (result.ifnext === 1) {
-				perform(page+1);
+				perform(force, page+1);
 			//move to next scan 
 			} else {
 				console.log('GO NEXT SCAN ARRAY');
 				sT.currentScan++;
-				perform(1); 
+				perform(force, 1); 
 			}
 		})
 		.catch(error => {
