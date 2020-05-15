@@ -36,7 +36,8 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server Kraina ksiazek crawler is running on port ${PORT}.`);
+  crawler.run(); 
 });
 
 
-crawler.run(); 
+

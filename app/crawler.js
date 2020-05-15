@@ -9,16 +9,20 @@ exports.run = async ()=> {
 }
 
 perform = async (page) => {
-	console.log('perform scan', sT.currentScan);
+	console.log('perform SCAN', sT.currentScan);
 	if (sT.currentScan >= sT.scanTables.length) {
 		console.log('END OF PROCESSING');
 		return;		
 	}
 	var v = sT.scanTables[sT.currentScan];
-	console.log('perform scan params', v);
+	console.log('scan params', JSON.stringify(v));
 
-	console.log('perform page', page);
-
+	console.log('page', page);
+	let cs = sT.scanTables[sT.currentScan];
+	if (cs.count !== null) {
+		let count = cs.count.replace('wyszukanych pozycji: ','');
+		console.log('progress', Math.round( 100 * cs.done / count * 10)/10, '%' );
+	}
 	await getList(v.lang, v.category, v.price_from, v.price_to, page)
         .then(response => {
 			//console.log("response.data", response.data);
@@ -29,6 +33,7 @@ perform = async (page) => {
 				book.category = v.category; 
 				book.lang = v.lang;
 				storage.storeBook(book);
+				sT.scanTables[sT.currentScan].done++;
 			});
 
 			//move to next page of results
@@ -74,6 +79,8 @@ parsePage = (html) => {
 	let books = [];
 	let mainNode;
 	try {
+		let count = dom.getElementById('searcher_flt').getElementsByTagName('span')[0].innerHTML.replaceHtmlEntites();
+		sT.scanTables[sT.currentScan].count = count;
     	mainNode = dom.getElementsByClassName('category_products')[0].childNodes[0];
 	} catch (e) {
 		console.log('parsePage - no results');
