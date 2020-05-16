@@ -38,8 +38,8 @@ app.listen(PORT, () => {
   console.log(`Server Kraina ksiazek crawler is running on port ${PORT}.`);
 });
 
-// crawler.run(true);
-crawler.runCount(); 
+crawler.run(true);
+// crawler.runCount(); 
 
 
 
