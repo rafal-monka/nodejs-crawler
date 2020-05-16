@@ -5,6 +5,10 @@ const sT = require("../config/global.js");
 
 exports.run = async (force=false)=> {
 	sT.currentScan = 0;
+	//add name of category
+	sT.scanTables.forEach((t, index) => {
+		sT.scanTables[index].catname = sT.getCategoryName(t.category);
+	})	
 	perform(force, 100, 1); 
 }
 
@@ -19,7 +23,7 @@ exports.runCount = async ()=> {
 }
 
 perform = async (force, pageSize, page) => {
-	console.log('perform SCAN', sT.currentScan, force, pageSize);
+	console.log('perform SCAN', sT.currentScan, 'of', sT.scanTables.length, 'force', force, 'pageSize', pageSize);
 	if (sT.currentScan >= sT.scanTables.length) {
 		console.log('END OF PROCESSING');
 		return;		

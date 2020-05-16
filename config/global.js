@@ -1,4 +1,5 @@
 exports.scanTables = [
+    /*RUN-1.a
     {lang: 'POL', category: 1, price_from: 0, price_to: 150, done: 0, count: null, count1: 2467},
     {lang: 'POL', category: 2, price_from: 0, price_to: 150, done: 0, count: null, count1: 5224},
     {lang: 'POL', category: 3, price_from: 0, price_to: 150, done: 0, count: null, count1: 348},
@@ -71,16 +72,18 @@ exports.scanTables = [
     {lang: 'ENG', category: 64, price_from: 0, price_to: 150, done: 0, count: null, count1: 1205},
     {lang: 'ENG', category: 18, price_from: 0, price_to: 150, done: 0, count: null, count1: 1811},
     {lang: 'ENG', category: 15, price_from: 0, price_to: 150, done: 0, count: null, count1: 2093},
-    {lang: 'ENG', category: 80, price_from: 0, price_to: 150, done: 0, count: null, count1: 2153},
-    {lang: 'ENG', category: 58, price_from: 0, price_to: 150, done: 0, count: null, count1: 3221},
-    {lang: 'ENG', category: 60, price_from: 0, price_to: 150, done: 0, count: null, count1: 4057},
-    {lang: 'ENG', category: 56, price_from: 0, price_to: 150, done: 0, count: null, count1: 4157},
+    */
+   
     {lang: 'ENG', category: 17, price_from: 0, price_to: 150, done: 0, count: null, count1: 5443},
     {lang: 'ENG', category: 43, price_from: 0, price_to: 150, done: 0, count: null, count1: 5589},
+    {lang: 'ENG', category: 46, price_from: 0, price_to: 150, done: 0, count: null, count1: 8610},
+    {lang: 'ENG', category: 47, price_from: 0, price_to: 150, done: 0, count: null, count1: 8833},
     {lang: 'ENG', category: 49, price_from: 0, price_to: 150, done: 0, count: null, count1: 7512},
     {lang: 'ENG', category: 50, price_from: 0, price_to: 150, done: 0, count: null, count1: 8559},
-    {lang: 'ENG', category: 46, price_from: 0, price_to: 150, done: 0, count: null, count1: 8610},
-    {lang: 'ENG', category: 47, price_from: 0, price_to: 150, done: 0, count: null, count1: 8833}    
+    {lang: 'ENG', category: 56, price_from: 0, price_to: 150, done: 0, count: null, count1: 4157},
+    {lang: 'ENG', category: 58, price_from: 0, price_to: 150, done: 0, count: null, count1: 3221},
+    {lang: 'ENG', category: 60, price_from: 0, price_to: 150, done: 0, count: null, count1: 4057},
+    {lang: 'ENG', category: 80, price_from: 0, price_to: 150, done: 0, count: null, count1: 2153} 
 ]
 
 const categories = [
