@@ -445,6 +445,99 @@ exports.scanTables = [
     {lang: 'POL', category: 98, price_from: 100, price_to: 150, done: 0, count: null}       
 ]
 
+const categories = [
+    {id: 1, name: 'Inne'},
+    {id: 2, name: 'Literatura piękna'},
+    {id: 3, name: 'Hobby'},
+    {id: 4, name: 'Literatura faktu'},
+    {id: 5, name: 'Kalendarze'},
+    {id: 6, name: 'Nauka'},
+    {id: 7, name: 'Podręczniki'},
+    {id: 8, name: 'Sztuka'},
+    {id: 9, name: 'Sport'},
+    {id: 10, name: 'Religia'},
+    {id: 11, name: 'Encyklopedie'},
+    {id: 12, name: 'Zdrowie'},
+    {id: 13, name: 'AudioBooki'},
+    {id: 14, name: 'Biologia i przyroda'},
+    {id: 15, name: 'Chemia'},
+    {id: 16, name: 'Ekonomia i biznes'},
+    {id: 17, name: 'Fizyka'},
+    {id: 18, name: 'Geografia'},
+    {id: 19, name: 'Matematyka'},
+    {id: 20, name: 'Filozofia'},
+    {id: 21, name: 'Historia'},
+    {id: 22, name: 'Językoznawstwo'},
+    {id: 23, name: 'Kultura. Etnografia'},
+    {id: 24, name: 'Literaturoznawstwo'},
+    {id: 25, name: 'Pedagogika i oświata'},
+    {id: 26, name: 'Polityka'},
+    {id: 27, name: 'Prawo i administracja'},
+    {id: 28, name: 'Psychologia'},
+    {id: 29, name: 'Socjologia i społeczeństwo'},
+    {id: 32, name: 'Fantastyka'},
+    {id: 33, name: 'Historyczna'},
+    {id: 34, name: 'Przygodowa'},
+    {id: 36, name: 'Satyryczna'},
+    {id: 37, name: 'Sensacyjna'},
+    {id: 38, name: 'Obyczajowa'},
+    {id: 39, name: 'Poezja'},
+    {id: 40, name: 'Dramat'},
+    {id: 41, name: 'Dziecięca'},
+    {id: 42, name: 'Turystyka'},
+    {id: 43, name: 'Atlasy i mapy'},
+    {id: 45, name: 'Przewodniki'},
+    {id: 46, name: 'Dom'},
+    {id: 47, name: 'Ogród'},
+    {id: 48, name: 'Zwierzęta'},
+    {id: 49, name: 'Kolekcjonerstwo'},
+    {id: 50, name: 'Fotografia'},
+    {id: 51, name: 'Architektura'},
+    {id: 53, name: 'Muzyka'},
+    {id: 54, name: 'Poradniki'},
+    {id: 55, name: 'Informatyka'},
+    {id: 56, name: 'Programowanie'},
+    {id: 57, name: 'Bazy danych'},
+    {id: 58, name: 'Bezpieczeństwo'},
+    {id: 59, name: 'Sieci komputerowe'},
+    {id: 60, name: 'Internet'},
+    {id: 61, name: 'Grafika komputerowa'},
+    {id: 62, name: 'Sprzęt komputerowy'},
+    {id: 63, name: 'Technologie'},
+    {id: 64, name: 'Archeologia'},
+    {id: 65, name: 'Romanse'},
+    {id: 66, name: 'Dla dorosłych'},
+    {id: 67, name: 'Komiksy'},
+    {id: 69, name: 'CD, DVD, Video'},
+    {id: 70, name: 'CD-Audio'},
+    {id: 71, name: 'Video'},
+    {id: 72, name: 'DVD'},
+    {id: 74, name: 'Oprogramowanie'},
+    {id: 76, name: 'Medycyna'},
+    {id: 77, name: 'Czasopisma'},
+    {id: 78, name: 'Słowniki'},
+    {id: 80, name: 'Muzyka CD'},
+    {id: 96, name: 'Książkowe Klimaty'},
+    {id: 97, name: 'Zabawki'},
+    {id: 98, name: 'Puzzle, gry'}
+]
+
+exports.getCategoryName = (catid) => {
+    try {
+        return categories[getCategoryIndex(catid)].name;
+    } catch (e) {
+        return "Error. Category id ["+catid+"] not found";
+    }
+}
+
+const getCategoryIndex = (id) => {
+    let index = categories.findIndex(i => 1*i.id === 1*id);
+    if (index!==-1) {
+        return index;
+    } else {
+        throw "Index of ["+id+"] not found in array";
+    }
+}
 
 exports.scanTables2 = [
 //2	Literatura piękna

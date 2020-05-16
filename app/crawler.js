@@ -5,16 +5,21 @@ const sT = require("../config/global.js");
 
 exports.run = async (force=false)=> {
 	sT.currentScan = 0;
-	perform(force, 1); //page
+	perform(force, 100, 1); 
 }
 
 exports.runCount = async ()=> {
 	sT.currentScan = 0;
-	performCount();
+	//add name of category
+	sT.scanTables.forEach((t, index) => {
+		sT.scanTables[index].catname = sT.getCategoryName(t.category);
+	})
+	//console.log(sT.scanTables);
+	performCount(2);
 }
 
-perform = async (force, page) => {
-	console.log('perform SCAN', sT.currentScan, force);
+perform = async (force, pageSize, page) => {
+	console.log('perform SCAN', sT.currentScan, force, pageSize);
 	if (sT.currentScan >= sT.scanTables.length) {
 		console.log('END OF PROCESSING');
 		return;		
@@ -33,7 +38,7 @@ perform = async (force, page) => {
 		let count = cs.count.replace('wyszukanych pozycji: ','');
 		console.log('progress', Math.round( 100 * cs.done / count * 100)/100, '%' );
 	}
-	await getList(v.lang, v.category, v.price_from, v.price_to, page)
+	await getList(pageSize, v.lang, v.category, v.price_from, v.price_to, page)
         .then(response => {
 			//console.log("response.data", response.data);
 			let result = parsePage(response.data);	
@@ -48,12 +53,12 @@ perform = async (force, page) => {
 
 			//move to next page of results
 			if (result.ifnext === 1) {
-				perform(force, page+1);
+				perform(force, pageSize, page+1);
 			//move to next scan 
 			} else {
 				console.log('GO NEXT SCAN ARRAY');
 				sT.currentScan++;
-				perform(force, 1); 
+				perform(force, pageSize, 1); 
 			}
 		})
 		.catch(error => {
@@ -62,21 +67,21 @@ perform = async (force, page) => {
 		})
 }
 
-performCount = async () => {
+performCount = async (pageSize) => {
 	if (sT.currentScan >= sT.scanTables.length) {
 		console.log('END OF PROCESSING');
 		return;		
 	}
 
 	var v = sT.scanTables[sT.currentScan];
-	console.log('performCount', sT.currentScan, v.lang, v.category, v.price_from, v.price_to);
-	await getList(v.lang, v.category, v.price_from, v.price_to, 1)
+	console.log('performCount', sT.currentScan, pageSize, v.lang, v.category, v.price_from, v.price_to);
+	await getList(pageSize, v.lang, v.category, v.price_from, v.price_to, 1)
         .then(response => {
 			//console.log("response.data", response.data);
 			let result = parseCount(response.data);	
-			console.log(JSON.stringify(result));
+			if (result !== null) console.log(JSON.stringify(result));
 			sT.currentScan++;
-			performCount(); 
+			performCount(pageSize);
 		})
 		.catch(error => {
 			console.log('ERROR', error);
@@ -84,13 +89,15 @@ performCount = async () => {
 
 }
 
-getList = (lang, category, price_from, price_to, page) => {
+getList = (pageSize, lang, category, price_from, price_to, page) => {
     const CONST_URL = "https://krainaksiazek.pl/sklep.html?author=&keyword=&isbn13=&publisher=&bisac=&action=search&type=adv&md=products_searcher";
     try {
         return axios({
             url: CONST_URL,
             methog: 'get',
             params: {
+				pages_nr_sort: pageSize, //page size
+				perm: 2, //w regularnej sprzedaży 
 				p_lang: lang,
 				p_price_from: price_from,
 				p_price_to: price_to,
@@ -113,7 +120,8 @@ parseCount = (html) => {
 		sT.scanTables[sT.currentScan].count = count;
 		return sT.scanTables[sT.currentScan];
 	} catch (e) {
-		console.log('parsePage - no results');
+		console.log('parseCount - no results');
+		return null;
 	}
 }
 
