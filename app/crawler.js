@@ -8,6 +8,11 @@ exports.run = async (force=false)=> {
 	perform(force, 1); //page
 }
 
+exports.runCount = async ()=> {
+	sT.currentScan = 0;
+	performCount();
+}
+
 perform = async (force, page) => {
 	console.log('perform SCAN', sT.currentScan, force);
 	if (sT.currentScan >= sT.scanTables.length) {
@@ -26,7 +31,7 @@ perform = async (force, page) => {
 	let cs = sT.scanTables[sT.currentScan];
 	if (cs.count !== null) {
 		let count = cs.count.replace('wyszukanych pozycji: ','');
-		console.log('progress', Math.round( 100 * cs.done / count * 10)/10, '%' );
+		console.log('progress', Math.round( 100 * cs.done / count * 100)/100, '%' );
 	}
 	await getList(v.lang, v.category, v.price_from, v.price_to, page)
         .then(response => {
@@ -57,6 +62,28 @@ perform = async (force, page) => {
 		})
 }
 
+performCount = async () => {
+	if (sT.currentScan >= sT.scanTables.length) {
+		console.log('END OF PROCESSING');
+		return;		
+	}
+
+	var v = sT.scanTables[sT.currentScan];
+	console.log('performCount', sT.currentScan, v.lang, v.category, v.price_from, v.price_to);
+	await getList(v.lang, v.category, v.price_from, v.price_to, 1)
+        .then(response => {
+			//console.log("response.data", response.data);
+			let result = parseCount(response.data);	
+			console.log(JSON.stringify(result));
+			sT.currentScan++;
+			performCount(); 
+		})
+		.catch(error => {
+			console.log('ERROR', error);
+		})
+
+}
+
 getList = (lang, category, price_from, price_to, page) => {
     const CONST_URL = "https://krainaksiazek.pl/sklep.html?author=&keyword=&isbn13=&publisher=&bisac=&action=search&type=adv&md=products_searcher";
     try {
@@ -77,8 +104,21 @@ getList = (lang, category, price_from, price_to, page) => {
     }
 }
 
+parseCount = (html) => {  
+	//console.log('parseCount');
+	var parser = new DomParser();
+	var dom = parser.parseFromString(html);
+	try {
+		let count = dom.getElementById('searcher_flt').getElementsByTagName('span')[0].innerHTML.replaceHtmlEntites();
+		sT.scanTables[sT.currentScan].count = count;
+		return sT.scanTables[sT.currentScan];
+	} catch (e) {
+		console.log('parsePage - no results');
+	}
+}
+
 parsePage = (html) => {    
-//console.log('parse');
+//console.log('parsePage');
     var parser = new DomParser();
     var dom = parser.parseFromString(html);
 	let books = [];
