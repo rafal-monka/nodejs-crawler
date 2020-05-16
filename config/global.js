@@ -74,6 +74,7 @@ exports.scanTables = [
     {lang: 'ENG', category: 15, price_from: 0, price_to: 150, done: 0, count: null, count1: 2093},
     */
    
+    /*RUN1-b
     {lang: 'ENG', category: 17, price_from: 0, price_to: 150, done: 0, count: null, count1: 5443},
     {lang: 'ENG', category: 43, price_from: 0, price_to: 150, done: 0, count: null, count1: 5589},
     {lang: 'ENG', category: 46, price_from: 0, price_to: 150, done: 0, count: null, count1: 8610},
@@ -83,7 +84,41 @@ exports.scanTables = [
     {lang: 'ENG', category: 56, price_from: 0, price_to: 150, done: 0, count: null, count1: 4157},
     {lang: 'ENG', category: 58, price_from: 0, price_to: 150, done: 0, count: null, count1: 3221},
     {lang: 'ENG', category: 60, price_from: 0, price_to: 150, done: 0, count: null, count1: 4057},
-    {lang: 'ENG', category: 80, price_from: 0, price_to: 150, done: 0, count: null, count1: 2153} 
+    {lang: 'ENG', category: 80, price_from: 0, price_to: 150, done: 0, count: null, count1: 2153}
+    */
+   
+    //RUN-2
+    {lang:"ENG", category:11, price_from:100, price_to:150, done: 0, count: null, count1:2519, catname:"Encyklopedie"}, 
+    {lang:"ENG", category:40, price_from:100, price_to:150, done: 0, count: null, count1:2882, catname:"Dramat"}, 
+    {lang:"ENG", category:45, price_from:100, price_to:150, done: 0, count: null, count1:3682, catname:"Przewodniki"}, 
+    {lang:"ENG", category:11, price_from:0, price_to:50, done: 0, count: null, count1:3870, catname:"Encyklopedie"}, 
+    {lang:"ENG", category:13, price_from:50, price_to:100, done: 0, count: null, count1:4106, catname:"AudioBooki"}, 
+    {lang:"ENG", category:28, price_from:0, price_to:50, done: 0, count: null, count1:4496, catname:"Psychologia"}, 
+    {lang:"ENG", category:23, price_from:50, price_to:100, done: 0, count: null, count1:4874, catname:"Kultura. Etnografia"}, 
+    {lang:"ENG", category:33, price_from:100, price_to:150, done: 0, count: null, count1:6100, catname:"Historyczna"}, 
+    {lang:"ENG", category:34, price_from:100, price_to:150, done: 0, count: null, count1:6258, catname:"Przygodowa"}, 
+    {lang:"ENG", category:7, price_from:100, price_to:150, done: 0, count: null, count1:6302, catname:"Podręczniki"}, 
+    {lang:"ENG", category:63, price_from:0, price_to:50, done: 0, count: null, count1:6388, catname:"Technologie"}, 
+    {lang:"ENG", category:14, price_from:100, price_to:150, done: 0, count: null, count1:6599, catname:"Biologia i przyroda"}, 
+    {lang:"ENG", category:28, price_from:100, price_to:150, done: 0, count: null, count1:6716, catname:"Psychologia"}, 
+    {lang:"ENG", category:40, price_from:0, price_to:50, done: 0, count: null, count1:6922, catname:"Dramat"}, 
+    {lang:"ENG", category:23, price_from:100, price_to:150, done: 0, count: null, count1:6968, catname:"Kultura. Etnografia"}, 
+    {lang:"ENG", category:20, price_from:0, price_to:50, done: 0, count: null, count1:7227, catname:"Filozofia"}, 
+    {lang:"ENG", category:48, price_from:50, price_to:100, done: 0, count: null, count1:7232, catname:"Zwierzęta"}, 
+    {lang:"ENG", category:51, price_from:100, price_to:150, done: 0, count: null, count1:7492, catname:"Architektura"}, 
+    {lang:"ENG", category:11, price_from:50, price_to:100, done: 0, count: null, count1:7625, catname:"Encyklopedie"}, 
+    {lang:"ENG", category:63, price_from:100, price_to:150, done: 0, count: null, count1:7677, catname:"Technologie"}, 
+    {lang:"ENG", category:12, price_from:100, price_to:150, done: 0, count: null, count1:7723, catname:"Zdrowie"}, 
+    {lang:"ENG", category:33, price_from:0, price_to:50, done: 0, count: null, count1:8156, catname:"Historyczna"}, 
+    {lang:"ENG", category:29, price_from:0, price_to:50, done: 0, count: null, count1:8163, catname:"Socjologia i społeczeństwo"}, 
+    {lang:"ENG", category:42, price_from:100, price_to:150, done: 0, count: null, count1:8191, catname:"Turystyka"}, 
+    {lang:"ENG", category:20, price_from:100, price_to:150, done: 0, count: null, count1:8538, catname:"Filozofia"}, 
+    {lang:"ENG", category:45, price_from:0, price_to:50, done: 0, count: null, count1:8612, catname:"Przewodniki"}, 
+    {lang:"ENG", category:26, price_from:0, price_to:50, done: 0, count: null, count1:9017, catname:"Polityka"}, 
+    {lang:"ENG", category:55, price_from:100, price_to:150, done: 0, count: null, count1:9560, catname:"Informatyka"}, 
+    {lang:"ENG", category:28, price_from:50, price_to:100, done: 0, count: null, count1:9652, catname:"Psychologia"}, 
+    {lang:"ENG", category:63, price_from:50, price_to:100, done: 0, count: null, count1:9737, catname:"Technologie"}
+
 ]
 
 const categories = [
