@@ -152,24 +152,29 @@ parsePage = (html) => {
 
 	tables.forEach(element => {
 		let plb = element.getElementsByClassName('product_list_box')[0];
-		let price = element.getElementsByClassName('product_price_with_tax_list')[0].innerHTML.replaceHtmlEntites();
 		let title = plb.getElementsByTagName('a')[0].innerHTML.replaceHtmlEntites();
-		let author = plb.getElementsByClassName('product_authors')[0].innerHTML.replaceHtmlEntites();
-		let description = '';
-		let param = plb.getElementsByClassName('product_param')[0].innerHTML.replaceHtmlEntites();
-		let term = plb.getElementsByClassName('term')[0].innerHTML.replaceHtmlEntites();
-		let p_id = element.getElementsByName('p_id')[0].getAttribute('value');
-		var book = {
-			title: title,
-			author: author,
-			description: description,
-			param: param,
-			term: term,
-			price: price,
-			p_id: p_id
+		try {		
+			let price = element.getElementsByClassName('product_price_with_tax_list')[0].innerHTML.replaceHtmlEntites();
+			let title = plb.getElementsByTagName('a')[0].innerHTML.replaceHtmlEntites();
+			let author = plb.getElementsByClassName('product_authors')[0].innerHTML.replaceHtmlEntites();
+			let description = '';
+			let param = plb.getElementsByClassName('product_param')[0].innerHTML.replaceHtmlEntites();
+			let term = plb.getElementsByClassName('term')[0].innerHTML.replaceHtmlEntites();
+			let p_id = element.getElementsByName('p_id')[0].getAttribute('value');
+			var book = {
+				title: title,
+				author: author,
+				description: description,
+				param: param,
+				term: term,
+				price: price,
+				p_id: p_id
+			}
+	//console.log(book);
+			books.push(book);
+		} catch (e) {
+			console.log('Error ', title);
 		}
-//console.log(book);
-		books.push(book); 
 	});
 	
 	let navs = dom.getElementsByClassName('pagelink_'); 
