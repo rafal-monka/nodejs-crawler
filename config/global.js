@@ -74,7 +74,7 @@ exports.scanTables = [
     {lang: 'ENG', category: 15, price_from: 0, price_to: 150, done: 0, count: null, count1: 2093},
     */
    
-    /*RUN1-b
+    /*RUN-1.b
     {lang: 'ENG', category: 17, price_from: 0, price_to: 150, done: 0, count: null, count1: 5443},
     {lang: 'ENG', category: 43, price_from: 0, price_to: 150, done: 0, count: null, count1: 5589},
     {lang: 'ENG', category: 46, price_from: 0, price_to: 150, done: 0, count: null, count1: 8610},
@@ -102,6 +102,7 @@ exports.scanTables = [
     */
 
     //RUN-2.b
+    /*
     {lang:"ENG", category:63, price_from:0, price_to:50, done: 0, count: null, count1:6388, catname:"Technologie"}, 
     {lang:"ENG", category:14, price_from:100, price_to:150, done: 0, count: null, count1:6599, catname:"Biologia i przyroda"}, 
     {lang:"ENG", category:28, price_from:100, price_to:150, done: 0, count: null, count1:6716, catname:"Psychologia"}, 
@@ -122,6 +123,24 @@ exports.scanTables = [
     {lang:"ENG", category:55, price_from:100, price_to:150, done: 0, count: null, count1:9560, catname:"Informatyka"}, 
     {lang:"ENG", category:28, price_from:50, price_to:100, done: 0, count: null, count1:9652, catname:"Psychologia"}, 
     {lang:"ENG", category:63, price_from:50, price_to:100, done: 0, count: null, count1:9737, catname:"Technologie"}
+    */
+    
+    // RUN-3
+    {lang:"ENG", category:55, price_from:0,   price_to:50, done:0, count: null, count1: 10602, catname:"Informatyka"},
+    {lang:"ENG", category:55, price_from:50,  price_to:100, done:0, count: null, count1: 10876, catname:"Informatyka"},
+    {lang:"ENG", category:14, price_from:0,   price_to:50, done:0, count: null, count1: 15212, catname:"Biologia i przyroda"},    
+    {lang:"ENG", category:14, price_from:50,  price_to:100, done:0, count: null, count1: 12270, catname:"Biologia i przyroda"},
+    {lang:"ENG", category:20, price_from:50,  price_to:100, done:0, count: null, count1: 12441, catname:"Filozofia"},
+    {lang:"ENG", category:29, price_from:100, price_to:150, done:0, count: null, count1: 12910, catname:"Socjologia i społeczeństwo"},
+    {lang:"ENG", category:48, price_from:0,   price_to:50, done:0, count: null, count1: 15469, catname:"Zwierzęta"},
+    {lang:"ENG", category:8,  price_from:0,   price_to:50, done:0, count: null, count1: 54535, catname:"Sztuka"},
+    {lang:"ENG", category:8,  price_from:100, price_to:150, done:0, count: null, count1: 23182, catname:"Sztuka"},
+    {lang:"ENG", category:16, price_from:0,   price_to:50, done:0, count: null, count1: 33953, catname:"Ekonomia i biznes"},
+    {lang:"ENG", category:16, price_from:100, price_to:150, done:0, count: null, count1: 25878, catname:"Ekonomia i biznes"},
+    {lang:"ENG", category:3,  price_from:100, price_to:150, done:0, count: null, count1: 10943, catname:"Hobby"},
+    {lang:"ENG", category:67, price_from:0,   price_to:50, done:0, count: null, count1: 12178, catname:"Komiksy"},
+    {lang:"ENG", category:34, price_from:0,   price_to:50, done:0, count: null, count1: 13303, catname:"Przygodowa"},    
+    {lang:"ENG", category:51, price_from:0,   price_to:50, done:0, count: null, count1: 18761, catname:"Architektura"}
 
 ]
 
