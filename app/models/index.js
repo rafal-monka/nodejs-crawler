@@ -26,5 +26,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.books = require("./book-model.js")(sequelize, Sequelize);
+db.vggallery = require("./vggallery-model.js")(sequelize, Sequelize);
 
 module.exports = db;
