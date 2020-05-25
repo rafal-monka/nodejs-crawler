@@ -4,11 +4,11 @@
 require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
-const crawler = require("./app/crawler.js");
-const storage = require("./app/storage.js");
 
-const vgcrawler = require("./app/vggallery-crawler.js");
-const vgstorage = require("./app/vggallery-storage.js");
+// const crawler = require("./app/crawler.js");
+// const storage = require("./app/storage.js");
+// const vgcrawler = require("./app/vggallery-crawler.js");
+// const vgstorage = require("./app/vggallery-storage.js");
 
 const db = require("./app/models");
 
