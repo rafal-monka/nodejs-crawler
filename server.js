@@ -5,6 +5,7 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 
+const remotedb = require("./app/remotedb.js");
 // const crawler = require("./app/crawler.js");
 // const storage = require("./app/storage.js");
 // const vgcrawler = require("./app/vggallery-crawler.js");
@@ -51,6 +52,7 @@ app.listen(PORT, () => {
   console.log(`Server Crawler is running on port ${PORT}.`);
 });
 
+remotedb.select();
 
 //vgcrawler.run_lists();
 // vgcrawler.run_download();
