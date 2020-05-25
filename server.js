@@ -52,7 +52,7 @@ app.listen(PORT, () => {
 });
 
 
-vgcrawler.run_lists();
+//vgcrawler.run_lists();
 // vgcrawler.run_download();
 
 // vgstorage.test();
