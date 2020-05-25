@@ -18,9 +18,9 @@ const getConnectionPool = () => {
       connectionLimit : 3,
       host: 'mysql.cloudaccess.host',
       port: 3306,
-      user: 'dvegnvkx',
-      password: 'RH.1gm8@7GtwK2',
-      database: 'dvegnvkx'
+      user: 'mexugnth',
+      password: 'Qs447hn2m-Z(AS',
+      database: 'mexugnth'
     });
     return pool;
   }
@@ -31,7 +31,7 @@ exports.select = ()=> {
         //connect to the database
         let pool = getConnectionPoolRemote();    
         console.log('remotedb.select.getConnectionPool');     
-        pool.query("SELECT NOW() as czas, count(*) FROM upv_options", [], function(error, data, fields) {
+        pool.query("SELECT NOW() as czas, t.* from test t", [], function(error, data, fields) {
             if (error) throw error;    
             const results = JSON.parse(JSON.stringify(data));
             console.log("results", results);  
@@ -41,3 +41,4 @@ exports.select = ()=> {
         console.log(e.toString());
     }  
 }
+

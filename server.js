@@ -6,6 +6,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const remotedb = require("./app/remotedb.js");
+const mongodb = require("./app/mongodb.js");
 // const crawler = require("./app/crawler.js");
 // const storage = require("./app/storage.js");
 // const vgcrawler = require("./app/vggallery-crawler.js");
@@ -53,6 +54,7 @@ app.listen(PORT, () => {
 });
 
 remotedb.select();
+mongodb.test();
 
 //vgcrawler.run_lists();
 // vgcrawler.run_download();
