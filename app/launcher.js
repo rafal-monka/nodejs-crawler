@@ -1,5 +1,5 @@
 module.exports = class Launcher  {
-    max_parralel;
+    max_parralel = 3;
     items = [];
     status = 'INIT';
     lastLaunchItem = 0;
