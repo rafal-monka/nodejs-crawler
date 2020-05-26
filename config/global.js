@@ -1,5 +1,5 @@
 exports.scanTables = [
-    /*RUN-1.a
+
     {lang: 'POL', category: 1, price_from: 0, price_to: 150, done: 0, count: null, count1: 2467},
     {lang: 'POL', category: 2, price_from: 0, price_to: 150, done: 0, count: null, count1: 5224},
     {lang: 'POL', category: 3, price_from: 0, price_to: 150, done: 0, count: null, count1: 348},
@@ -59,7 +59,7 @@ exports.scanTables = [
     {lang: 'POL', category: 80, price_from: 0, price_to: 150, done: 0, count: null, count1: 3},
     {lang: 'POL', category: 96, price_from: 0, price_to: 150, done: 0, count: null, count1: 62},
     {lang: 'POL', category: 98, price_from: 0, price_to: 150, done: 0, count: null, count1: 541},
-    */
+
     {lang: 'ENG', category: 98, price_from: 0, price_to: 150, done: 0, count: null, count1: 23},
     {lang: 'ENG', category: 70, price_from: 0, price_to: 150, done: 0, count: null, count1: 38},
     {lang: 'ENG', category: 5, price_from: 0, price_to: 150, done: 0, count: null, count1: 147},
@@ -73,9 +73,7 @@ exports.scanTables = [
     {lang: 'ENG', category: 64, price_from: 0, price_to: 150, done: 0, count: null, count1: 1205},
     {lang: 'ENG', category: 18, price_from: 0, price_to: 150, done: 0, count: null, count1: 1811},
     {lang: 'ENG', category: 15, price_from: 0, price_to: 150, done: 0, count: null, count1: 2093},
-    
-   
-    /*RUN-1.b
+
     {lang: 'ENG', category: 17, price_from: 0, price_to: 150, done: 0, count: null, count1: 5443},
     {lang: 'ENG', category: 43, price_from: 0, price_to: 150, done: 0, count: null, count1: 5589},
     {lang: 'ENG', category: 46, price_from: 0, price_to: 150, done: 0, count: null, count1: 8610},
@@ -85,11 +83,8 @@ exports.scanTables = [
     {lang: 'ENG', category: 56, price_from: 0, price_to: 150, done: 0, count: null, count1: 4157},
     {lang: 'ENG', category: 58, price_from: 0, price_to: 150, done: 0, count: null, count1: 3221},
     {lang: 'ENG', category: 60, price_from: 0, price_to: 150, done: 0, count: null, count1: 4057},
-    {lang: 'ENG', category: 80, price_from: 0, price_to: 150, done: 0, count: null, count1: 2153}
-    */
-   
-    //RUN-2.a
-    /*
+    {lang: 'ENG', category: 80, price_from: 0, price_to: 150, done: 0, count: null, count1: 2153},
+
     {lang:"ENG", category:11, price_from:100, price_to:150, done: 0, count: null, count1:2519, catname:"Encyklopedie"}, 
     {lang:"ENG", category:40, price_from:100, price_to:150, done: 0, count: null, count1:2882, catname:"Dramat"}, 
     {lang:"ENG", category:45, price_from:100, price_to:150, done: 0, count: null, count1:3682, catname:"Przewodniki"}, 
@@ -100,10 +95,7 @@ exports.scanTables = [
     {lang:"ENG", category:33, price_from:100, price_to:150, done: 0, count: null, count1:6100, catname:"Historyczna"}, 
     {lang:"ENG", category:34, price_from:100, price_to:150, done: 0, count: null, count1:6258, catname:"Przygodowa"}, 
     {lang:"ENG", category:7, price_from:100, price_to:150, done: 0, count: null, count1:6302, catname:"Podręczniki"}, 
-    */
 
-    //RUN-2.b
-    /*
     {lang:"ENG", category:63, price_from:0, price_to:50, done: 0, count: null, count1:6388, catname:"Technologie"}, 
     {lang:"ENG", category:14, price_from:100, price_to:150, done: 0, count: null, count1:6599, catname:"Biologia i przyroda"}, 
     {lang:"ENG", category:28, price_from:100, price_to:150, done: 0, count: null, count1:6716, catname:"Psychologia"}, 
@@ -123,11 +115,8 @@ exports.scanTables = [
     {lang:"ENG", category:26, price_from:0, price_to:50, done: 0, count: null, count1:9017, catname:"Polityka"}, 
     {lang:"ENG", category:55, price_from:100, price_to:150, done: 0, count: null, count1:9560, catname:"Informatyka"}, 
     {lang:"ENG", category:28, price_from:50, price_to:100, done: 0, count: null, count1:9652, catname:"Psychologia"}, 
-    {lang:"ENG", category:63, price_from:50, price_to:100, done: 0, count: null, count1:9737, catname:"Technologie"}
-    */
-    
-    // RUN-3
-    /*
+    {lang:"ENG", category:63, price_from:50, price_to:100, done: 0, count: null, count1:9737, catname:"Technologie"},
+
     {lang:"ENG", category:55, price_from:0,   price_to:50, done:0, count: null, count1: 10602, catname:"Informatyka"},
     {lang:"ENG", category:55, price_from:50,  price_to:100, done:0, count: null, count1: 10876, catname:"Informatyka"},
     {lang:"ENG", category:14, price_from:0,   price_to:50, done:0, count: null, count1: 15212, catname:"Biologia i przyroda"},    
@@ -143,7 +132,7 @@ exports.scanTables = [
     {lang:"ENG", category:67, price_from:0,   price_to:50, done:0, count: null, count1: 12178, catname:"Komiksy"},
     {lang:"ENG", category:34, price_from:0,   price_to:50, done:0, count: null, count1: 13303, catname:"Przygodowa"},    
     {lang:"ENG", category:51, price_from:0,   price_to:50, done:0, count: null, count1: 18761, catname:"Architektura"}
-    */
+
 ]
 
 const categories = [
