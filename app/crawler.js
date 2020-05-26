@@ -2,6 +2,7 @@ var axios = require('axios');
 var DomParser = require('dom-parser');
 const storage = require("./storage.js");
 const sT = require("../config/global.js");
+const CONST_PAGE_SIZE = 1000;
 
 exports.run = async (force=false)=> {
 	sT.currentScan = 0;
@@ -9,7 +10,7 @@ exports.run = async (force=false)=> {
 	sT.scanTables.forEach((t, index) => {
 		sT.scanTables[index].catname = sT.getCategoryName(t.category);
 	})	
-	perform(force, 100, 1); 
+	perform(force, CONST_PAGE_SIZE, 1); 
 }
 
 exports.runCount = async ()=> {

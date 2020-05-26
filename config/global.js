@@ -59,6 +59,7 @@ exports.scanTables = [
     {lang: 'POL', category: 80, price_from: 0, price_to: 150, done: 0, count: null, count1: 3},
     {lang: 'POL', category: 96, price_from: 0, price_to: 150, done: 0, count: null, count1: 62},
     {lang: 'POL', category: 98, price_from: 0, price_to: 150, done: 0, count: null, count1: 541},
+    */
     {lang: 'ENG', category: 98, price_from: 0, price_to: 150, done: 0, count: null, count1: 23},
     {lang: 'ENG', category: 70, price_from: 0, price_to: 150, done: 0, count: null, count1: 38},
     {lang: 'ENG', category: 5, price_from: 0, price_to: 150, done: 0, count: null, count1: 147},
@@ -72,7 +73,7 @@ exports.scanTables = [
     {lang: 'ENG', category: 64, price_from: 0, price_to: 150, done: 0, count: null, count1: 1205},
     {lang: 'ENG', category: 18, price_from: 0, price_to: 150, done: 0, count: null, count1: 1811},
     {lang: 'ENG', category: 15, price_from: 0, price_to: 150, done: 0, count: null, count1: 2093},
-    */
+    
    
     /*RUN-1.b
     {lang: 'ENG', category: 17, price_from: 0, price_to: 150, done: 0, count: null, count1: 5443},
@@ -126,6 +127,7 @@ exports.scanTables = [
     */
     
     // RUN-3
+    /*
     {lang:"ENG", category:55, price_from:0,   price_to:50, done:0, count: null, count1: 10602, catname:"Informatyka"},
     {lang:"ENG", category:55, price_from:50,  price_to:100, done:0, count: null, count1: 10876, catname:"Informatyka"},
     {lang:"ENG", category:14, price_from:0,   price_to:50, done:0, count: null, count1: 15212, catname:"Biologia i przyroda"},    
@@ -141,7 +143,7 @@ exports.scanTables = [
     {lang:"ENG", category:67, price_from:0,   price_to:50, done:0, count: null, count1: 12178, catname:"Komiksy"},
     {lang:"ENG", category:34, price_from:0,   price_to:50, done:0, count: null, count1: 13303, catname:"Przygodowa"},    
     {lang:"ENG", category:51, price_from:0,   price_to:50, done:0, count: null, count1: 18761, catname:"Architektura"}
-
+    */
 ]
 
 const categories = [

@@ -7,15 +7,17 @@ const bodyParser = require("body-parser");
 
 const remotedb = require("./app/remotedb.js");
 const mongodb = require("./app/mongodb.js");
-// const crawler = require("./app/crawler.js");
-// const storage = require("./app/storage.js");
+
+const crawler = require("./app/crawler.js");
+const storage = require("./app/storage.js");
+
 // const vgcrawler = require("./app/vggallery-crawler.js");
 // const vgstorage = require("./app/vggallery-storage.js");
 
 const db = require("./app/models");
 
 //@@@development = true; production = false
-db.sequelize.sync(  { force: false }  ); //!!! In development, you may need to drop existing tables and re-sync database.
+db.sequelize.sync(  { force: true }  ); //!!! In development, you may need to drop existing tables and re-sync database.
 
 
 const app = express();
@@ -53,15 +55,15 @@ app.listen(PORT, () => {
   console.log(`Server Crawler is running on port ${PORT}.`);
 });
 
-remotedb.select();
-mongodb.test();
+// remotedb.select();
+// mongodb.test();
 
 //vgcrawler.run_lists();
 // vgcrawler.run_download();
 
 // vgstorage.test();
 // vgcrawler.testPage();
-// crawler.run(true);
+crawler.run(true);
 // crawler.runCount(); 
 
 
