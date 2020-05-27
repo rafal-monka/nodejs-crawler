@@ -1,5 +1,6 @@
 exports.scanTables = [
-
+    {lang: 'ENG', category: 41, price_from: 0, price_to: 15, done: 0, count: null, count1: 23},
+/*
     {lang: 'POL', category: 1, price_from: 0, price_to: 150, done: 0, count: null, count1: 2467},
     {lang: 'POL', category: 2, price_from: 0, price_to: 150, done: 0, count: null, count1: 5224},
     {lang: 'POL', category: 3, price_from: 0, price_to: 150, done: 0, count: null, count1: 348},
@@ -59,7 +60,7 @@ exports.scanTables = [
     {lang: 'POL', category: 80, price_from: 0, price_to: 150, done: 0, count: null, count1: 3},
     {lang: 'POL', category: 96, price_from: 0, price_to: 150, done: 0, count: null, count1: 62},
     {lang: 'POL', category: 98, price_from: 0, price_to: 150, done: 0, count: null, count1: 541},
-
+/*
     {lang: 'ENG', category: 98, price_from: 0, price_to: 150, done: 0, count: null, count1: 23},
     {lang: 'ENG', category: 70, price_from: 0, price_to: 150, done: 0, count: null, count1: 38},
     {lang: 'ENG', category: 5, price_from: 0, price_to: 150, done: 0, count: null, count1: 147},
@@ -132,7 +133,7 @@ exports.scanTables = [
     {lang:"ENG", category:67, price_from:0,   price_to:50, done:0, count: null, count1: 12178, catname:"Komiksy"},
     {lang:"ENG", category:34, price_from:0,   price_to:50, done:0, count: null, count1: 13303, catname:"Przygodowa"},    
     {lang:"ENG", category:51, price_from:0,   price_to:50, done:0, count: null, count1: 18761, catname:"Architektura"}
-
+*/
 ]
 
 const categories = [

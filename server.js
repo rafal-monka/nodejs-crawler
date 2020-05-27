@@ -11,6 +11,8 @@ const mongodb = require("./app/mongodb.js");
 const crawler = require("./app/crawler.js");
 const storage = require("./app/storage.js");
 
+const kk_check_code = require("./app/kk_check_code.js");
+
 // const vgcrawler = require("./app/vggallery-crawler.js");
 // const vgstorage = require("./app/vggallery-storage.js");
 
@@ -55,6 +57,9 @@ app.listen(PORT, () => {
   console.log(`Server Crawler is running on port ${PORT}.`);
 });
 
+
+//kk_check_code.scan();
+
 // remotedb.select();
 // mongodb.test();
 
@@ -63,7 +68,7 @@ app.listen(PORT, () => {
 
 // vgstorage.test();
 // vgcrawler.testPage();
-crawler.run(true);
+//crawler.run(true);
 // crawler.runCount(); 
 
 

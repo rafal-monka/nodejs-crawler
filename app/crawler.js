@@ -47,7 +47,7 @@ perform = async (force, pageSize, page) => {
         .then(response => {
 			//console.log("response.data", response.data);
 			let result = parsePage(response.data);	
-			//console.log('result',result);
+			console.log('result.books.length',result.books.length);
 			result.books.forEach(book => {
 				//console.log('book.title',book.title);  
 				book.category = v.category; 
@@ -95,8 +95,9 @@ performCount = async (pageSize) => {
 }
 
 getList = (pageSize, lang, category, price_from, price_to, page) => {
-    const CONST_URL = "https://krainaksiazek.pl/sklep.html?author=&keyword=&isbn13=&publisher=&bisac=&action=search&type=adv&md=products_searcher";
-    try {
+    //const CONST_URL = "https://krainaksiazek.pl/sklep.html?author=&keyword=&isbn13=&publisher=&bisac=&action=search&type=adv&md=products_searcher";
+	const CONST_URL = "https://krainaksiazek.pl/sklep.html?md=products_searcher&action=search&filter_hon=1&type=adv&q_sort=0&filter_clear=";
+	try {
         return axios({
             url: CONST_URL,
             methog: 'get',
@@ -106,8 +107,8 @@ getList = (pageSize, lang, category, price_from, price_to, page) => {
 				p_lang: lang,
 				p_price_from: price_from,
 				p_price_to: price_to,
-				pg: page,
-				ct_id: category
+				pg: page/*,
+				ct_id: category*/
             }
         })
     } catch (error) {
@@ -159,13 +160,18 @@ parsePage = (html) => {
 			let title = plb.getElementsByTagName('a')[0].innerHTML.replaceHtmlEntites();
 			let author = plb.getElementsByClassName('product_authors')[0].innerHTML.replaceHtmlEntites();
 			let description = '';
+			try {
+				description = element.getElementsByClassName('product_short_description')[0].innerHTML.replaceHtmlEntites();
+			} catch (e) {
+				description = '';
+			}
 			let param = plb.getElementsByClassName('product_param')[0].innerHTML.replaceHtmlEntites();
 			let term = plb.getElementsByClassName('term')[0].innerHTML.replaceHtmlEntites();
 			let p_id = element.getElementsByName('p_id')[0].getAttribute('value');
 			var book = {
 				title: title,
 				author: author,
-				description: description,
+				description: description.substr(0,500),
 				param: param,
 				term: term,
 				price: price,
