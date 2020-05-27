@@ -12,7 +12,7 @@ exports.scan = () => {
         'myb-94964ed675'        
     ]
 
-    for (let i=0; i<0xfff; i++) {
+    for (let i=0; i<0x000000ffff; i++) {
         let h = i.toString(16);
         let str = (new Array(10).concat([]).join('0')+h).slice(-10);
         //console.log((new Array(10).concat([]).join('0')+h).slice(-10), h);
@@ -26,7 +26,7 @@ exports.scan = () => {
         checkCode,
         //callbackFunction,
         (item, res) => {
-            //console.log(item, res.data);
+            console.log(item, res.data);
             let output = utils.replaceHtmlEntites(res.data);
             let code = {
                 code: item,
@@ -37,7 +37,7 @@ exports.scan = () => {
         },
         //finalCallBack
         (param) => {
-            console.log(param) 
+            console.log('END') 
         }
     )
     pad.run();

@@ -36,7 +36,7 @@ module.exports = class Launcher  {
     }
 
     launchItem () {        
-        console.log('launchItem', this.lastLaunchItem, this.items.length);
+        //console.log('launchItem', this.lastLaunchItem, this.items.length);
         if (this.lastLaunchItem < this.items.length) {
             this.runningCount++;
             let item = this.items[this.lastLaunchItem++];
