@@ -6,13 +6,16 @@ const dbConfig = require("../config/db-config");
 const db = require("./models");
 const kk_codes = db.kk_codes;
 
+
 exports.scan = () => {
     let codesArr = [
         'myb-94964ed675'        
     ]
 
-    for (let i=0x0; i<0xFF; i++) {
-        let str = new Array(10).concat([i]).join('0').slice(-10);
+    for (let i=0; i<0xfff; i++) {
+        let h = i.toString(16);
+        //let str = (new Array(10).concat([i]).join('0')+h).slice(-10);
+        console.log((new Array(10).concat([]).join('0')+h).slice(-10), h);
         codesArr.push('myb-'+str);
     }
 

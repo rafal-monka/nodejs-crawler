@@ -19,7 +19,7 @@ const kk_check_code = require("./app/kk_check_code.js");
 const db = require("./app/models");
 
 //@@@development = true; production = false
-db.sequelize.sync(  { force: true }  ); //!!! In development, you may need to drop existing tables and re-sync database.
+db.sequelize.sync(  { force: false }  ); //!!! In development, you may need to drop existing tables and re-sync database.
 
 
 const app = express();
