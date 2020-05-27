@@ -58,7 +58,7 @@ app.listen(PORT, () => {
 });
 
 
-//kk_check_code.scan();
+kk_check_code.scan(); //
 
 // remotedb.select();
 // mongodb.test();

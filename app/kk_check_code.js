@@ -11,7 +11,7 @@ exports.scan = () => {
         'myb-94964ed675'        
     ]
 
-    for (let i=0x0; i<0xFFFF; i++) {
+    for (let i=0x0; i<0xFF; i++) {
         let str = new Array(10).concat([i]).join('0').slice(-10);
         codesArr.push('myb-'+str);
     }

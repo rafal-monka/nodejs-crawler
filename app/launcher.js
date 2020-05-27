@@ -1,18 +1,22 @@
 module.exports = class Launcher  {
-    max_parralel = 3;
-    items = [];
-    status = 'INIT';
-    lastLaunchItem = 0;
-    runningCount = 0;
-    //runningCount: 0,
-    output = [];
-    callFunction = () => {};
-    callbackFunction = () => {};
-    finalCallbackFunction = () => {};
+    // max_parralel = 3;
+    // items = [];
+    // status = 'INIT';
+    // lastLaunchItem = 0;
+    // runningCount = 0;
+    // //runningCount: 0,
+    // output = [];
+    // callFunction = () => {};
+    // callbackFunction = () => {};
+    // finalCallbackFunction = () => {};
 
     constructor(max_parralel, items, callFunction, callbackFunction, finalCallbackFunction) {
         this.max_parralel = max_parralel;
+        this.status = 'INIT';
+        this.lastLaunchItem = 0;
+        this.runningCount = 0;
         this.items = items; 
+        this.output = [];
         this.callFunction = callFunction; 
         this.callbackFunction = callbackFunction;
         this.finalCallbackFunction = finalCallbackFunction;   
