@@ -14,8 +14,8 @@ exports.scan = () => {
 
     for (let i=0; i<0xfff; i++) {
         let h = i.toString(16);
-        //let str = (new Array(10).concat([i]).join('0')+h).slice(-10);
-        console.log((new Array(10).concat([]).join('0')+h).slice(-10), h);
+        let str = (new Array(10).concat([]).join('0')+h).slice(-10);
+        //console.log((new Array(10).concat([]).join('0')+h).slice(-10), h);
         codesArr.push('myb-'+str);
     }
 
