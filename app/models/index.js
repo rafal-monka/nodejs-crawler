@@ -25,8 +25,9 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.books = require("./book-model.js")(sequelize, Sequelize);
-db.vggallery = require("./vggallery-model.js")(sequelize, Sequelize);
-db.kk_codes = require("./kk_codes-model.js")(sequelize, Sequelize);
+// db.books = require("./book-model.js")(sequelize, Sequelize);
+ db.vggallery = require("./vggallery-model.js")(sequelize, Sequelize);
+// db.kk_codes = require("./kk_codes-model.js")(sequelize, Sequelize);
+//db.AOL = require("./aol-model.js")(sequelize, Sequelize);
 
 module.exports = db;

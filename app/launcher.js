@@ -1,79 +1,98 @@
 module.exports = class Launcher  {
-    // max_parralel = 3;
-    // items = [];
-    // status = 'INIT';
-    // lastLaunchItem = 0;
-    // runningCount = 0;
-    // //runningCount: 0,
-    // output = [];
-    // callFunction = () => {};
-    // callbackFunction = () => {};
-    // finalCallbackFunction = () => {};
 
-    constructor(max_parralel, items, callFunction, callbackFunction, finalCallbackFunction) {
-        this.max_parralel = max_parralel;
-        this.status = 'INIT';
-        this.lastLaunchItem = 0;
-        this.runningCount = 0;
-        this.items = items; 
-        this.output = [];
-        this.callFunction = callFunction; 
-        this.callbackFunction = callbackFunction;
-        this.finalCallbackFunction = finalCallbackFunction;   
+    constructor(max_parralel, items, callFunction, callbackFunction, catchFunction, finalCallbackFunction) {
+        this.max_parralel = max_parralel
+        this.status = 'INIT'
+        this.lastLaunchItem = 0
+        this.runningCount = 0
+        this.leftItems = items.length
+        this.items = items
+        this.output = []
+        this.callFunction = callFunction
+        this.callbackFunction = callbackFunction
+        this.catchFunction = catchFunction
+        this.finalCallbackFunction = finalCallbackFunction
     }
 
     run () {
-        console.log('run');
+        console.log('run', Math.min(this.max_parralel, this.items.length));
         if (this.items) {
             this.status = 'RUNNING';
             for (var i=0; i < Math.min(this.max_parralel, this.items.length); i++ ) {
-                //console.log('for launchItem', i);
-                this.launchItem();
+                setTimeout( ()=> {
+                    //console.log('for launchItem', i);
+                    this.launchItem()
+                }, 100)
             }  
         } else {
             console.log('End. Array of items is empty');
         }
     }
 
-    launchItem () {        
-        //console.log('launchItem', this.lastLaunchItem, this.items.length);
-        if (this.lastLaunchItem < this.items.length) {
-            this.runningCount++;
-            let item = this.items[this.lastLaunchItem++];
-            this.callFunction(item)
-            .then(value => {
-                // fulfillment
-                //console.log(value.data);
-                this.runningCount--;
-                let val = null;
-                try {
-                    val = this.callbackFunction(item, value)
-                } catch (e) {
-                    console.error(e);
-                    console.log(item);
-                }
-                this.output.push( {
-                    item: item, 
-                    output: val
-                });
+    checkQueue() {
+        //console.log('checkQueue (lastLaunchItem, items.length, runningCount, leftItems)=', this.lastLaunchItem, this.items.length, this.runningCount, this.leftItems)
+        //check queue
+        // if (this.runningCount > 0 || (this.runningCount === 0 && this.max_parralel === 1)) {
+        //     this.launchItem()
+        // } else {
 
-                //check queue
-                if (this.runningCount > 0) {
-                    this.launchItem();
-                } else {
-                    console.log('done', this.lastLaunchItem);
-                    this.status = 'DONE';
-                    this.finalCallbackFunction(this.output);    
-                }
-            })
-            .catch(e => {
-                // rejection
-                this.runningCount--;
-                console.log('Item ',this.lastLaunchItem,'rejected. Error', e);
-            });
+        if (this.leftItems === 0) {
+            //console.log('done', this.lastLaunchItem);
+            this.status = 'DONE';
+            this.finalCallbackFunction(this.output);    
+        } else {
+            if (this.runningCount <= this.max_parralel) this.launchItem()
+        }
+    }
+
+    launchItem () {        
+        if (this.lastLaunchItem < this.items.length) {
+            console.log('launchItem() ', this.lastLaunchItem, ' of ', this.items.length-1)
+            this.runningCount++
+            let item = this.items[this.lastLaunchItem++]
+            //console.log('launched item', item)
+            try {
+                this.callFunction(item)
+                .then(value => {
+                    // fulfillment
+                    //console.log(value.data);
+                    this.runningCount--
+                    this.leftItems--
+                    let val = null
+                    try {
+                        val = this.callbackFunction(item, value)
+                    } catch (e) {
+                        console.error(e)
+                        console.log(item)
+                        val = e.toString()
+                    }
+                    this.output.push( {
+                        item: item, 
+                        output: val
+                    });
+                    this.checkQueue()
+                })
+                .catch(e => {
+                    // rejection
+                    console.log('launchItem(): THEN CATCH. Item ', item, ' [REJECTED]. Error', e.toString())
+                    this.catchFunction(e, item)
+                    this.runningCount--
+                    this.leftItems--
+                    this.checkQueue()
+                })
+            } catch (e) {
+                console.log('launchItem(): TRY CATCH. callFunction ',item, ' Error', e.toString())
+                setTimeout( () => {
+                    this.runningCount--
+                    this.leftItems--
+                    this.checkQueue()
+                    //this.catchFunction(e, item) ###???
+                }, 3000)
+            }
         } 
     }
 }
+
 
 //-------------------
 exports.runTest = ()=> {

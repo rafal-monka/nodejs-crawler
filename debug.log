@@ -1,0 +1,9 @@
+[0802/194917.535:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0802/194917.536:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0802/194917.536:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0802/194917.536:ERROR:process_reader_win.cc(151)] SuspendThread: Odmowa dostêpu. (0x5)
+[0802/194917.536:ERROR:exception_snapshot_win.cc(98)] thread ID 31772 not found in process
+[0802/195613.196:ERROR:process_info.cc(329)] VirtualQueryEx: Odmowa dostêpu. (0x5)
+[0802/195613.196:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0802/195613.196:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0802/195613.196:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Podjêto próbê uzyskania dostêpu do procesu koñcz¹cego dzia³anie. (0xc000010a)

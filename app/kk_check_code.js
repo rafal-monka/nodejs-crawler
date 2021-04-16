@@ -58,7 +58,7 @@ checkCode = (code) => {
 	try {
         const params = new URLSearchParams();
         params.append('coupon_code_val', 300);
-        params.append('coupon_code_val2', '76904.ea429365cb93ac80a5ff7d5b248f662e');
+        params.append('coupon_code_val2', '76904.ea429365cb93ac80a5ff7d5b248f662e');//79507.ba91d202c1ff520cde6b4bfb33c962c0
         params.append('coupon_code', code);
         return axios.post(
             CONST_URL,

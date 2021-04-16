@@ -8,7 +8,7 @@ const db = require("./models");
 const Op = db.Sequelize.Op;
 const vggalleryPictures = db.vggallery;
 const BASE_URL = "http://www.vggallery.com/";
-const DOWNLOAD_PATH = './app/download/'
+const DOWNLOAD_PATH = './download/'
 
 var Launcher = require("./launcher.js");
 
@@ -18,25 +18,27 @@ exports.run_lists = ()=> {
     let pad = new Launcher(
         2, 
         [
-            {category: 'watercolours', main: 'main.htm'},
+            // {category: 'watercolours', main: 'main.htm'},
             
-            {category: 'painting', main: 'main_ac.htm'},
-            {category: 'painting', main: 'main_df.htm'},
-            {category: 'painting', main: 'main_gi.htm'},
-            {category: 'painting', main: 'main_jl.htm'},
-            {category: 'painting', main: 'main_mo.htm'},
-            {category: 'painting', main: 'main_pr.htm'},
-            {category: 'painting', main: 'main_su.htm'},
-            {category: 'painting', main: 'main_vz.htm'},
+            {category: 'painting', main: 'main_se.htm'},
 
-            {category: 'drawings', main: 'main_ac.htm'},
-            {category: 'drawings', main: 'main_df.htm'},
-            {category: 'drawings', main: 'main_gi.htm'},
-            {category: 'drawings', main: 'main_jl.htm'},
-            {category: 'drawings', main: 'main_mo.htm'},
-            {category: 'drawings', main: 'main_pr.htm'},
-            {category: 'drawings', main: 'main_su.htm'},
-            {category: 'drawings', main: 'main_vz.htm'}            
+            // {category: 'painting', main: 'main_ac.htm'},
+            // {category: 'painting', main: 'main_df.htm'},
+            // {category: 'painting', main: 'main_gi.htm'},
+            // {category: 'painting', main: 'main_jl.htm'},
+            // {category: 'painting', main: 'main_mo.htm'},
+            // {category: 'painting', main: 'main_pr.htm'},
+            // {category: 'painting', main: 'main_su.htm'},
+            // {category: 'painting', main: 'main_vz.htm'},
+
+            // {category: 'drawings', main: 'main_ac.htm'},
+            // {category: 'drawings', main: 'main_df.htm'},
+            // {category: 'drawings', main: 'main_gi.htm'},
+            // {category: 'drawings', main: 'main_jl.htm'},
+            // {category: 'drawings', main: 'main_mo.htm'},
+            // {category: 'drawings', main: 'main_pr.htm'},
+            // {category: 'drawings', main: 'main_su.htm'},
+            // {category: 'drawings', main: 'main_vz.htm'}            
         ], 
         //callFunction,
         getList,
